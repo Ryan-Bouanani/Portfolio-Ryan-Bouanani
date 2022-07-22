@@ -58,7 +58,7 @@ p {
   color: #C3C3C3;
 }
 
-button {
+button, .button {
   background: #0093E9;
   color: white;
 }
@@ -91,12 +91,17 @@ p {
   margin-bottom: 8rem;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 300px) {
   .homeIllustration, .skillsIllustration, .educationIllustration {
     width: 100% !important;
     height: 13rem !important;
   }
 }
+div.elementsScroll, h2 {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
 header {
   width: 100%;
   height: 30px;
@@ -149,12 +154,51 @@ header button.toggleBtn {
 header #navToggleClose {
   display: none;
 }
+@media screen and (max-width: 830px) {
+  header .navLinks {
+    perspective: 1000px;
+  }
+  header .navLinks li {
+    transform: rotate(-90deg) rotateY(90deg);
+    transform-origin: top right;
+    animation: animation1 1s ease forwards;
+    opacity: 0;
+  }
+  header .navLinks li:nth-child(2) {
+    animation-delay: 300ms;
+    transform-origin: top left;
+    transform: rotateZ(90deg) rotateY(-90deg);
+  }
+  header .navLinks li:nth-child(3) {
+    animation-delay: 600ms;
+  }
+  header .navLinks li:nth-child(4) {
+    animation-delay: 900ms;
+    transform-origin: top left;
+    transform: rotateZ(90deg) rotateY(-90deg);
+  }
+  header .navLinks li:nth-child(5) {
+    animation-delay: 1.2s;
+  }
+  header .navLinks li:nth-child(6) {
+    animation-delay: 1.5s;
+    transform-origin: top left;
+    transform: rotateZ(90deg) rotateY(-90deg);
+  }
+  @keyframes animation1 {
+    to {
+      transform: rotate(0);
+      opacity: 1;
+    }
+  }
+}
 @media screen and (min-width: 830px) {
   header nav {
     margin-top: 2rem;
   }
   header nav .navLinks {
     position: unset;
+    display: flex !important;
     flex-direction: row;
     right: unset;
     top: unset;
@@ -163,6 +207,7 @@ header #navToggleClose {
   }
   header nav .navLinks li {
     display: inline;
+    animation: none;
   }
   header nav .navLinks li a {
     background: transparent;
@@ -172,15 +217,17 @@ header #navToggleClose {
     border-top: 0;
   }
   header nav #navToggleOpen {
-    display: none;
+    display: none !important;
   }
 }
+
 #home {
   position: relative;
   gap: 3rem;
 }
 #home div.homeLeft {
   width: 95%;
+  transition: opacity 2.8s ease-in-out;
 }
 #home div.homeLeft h1 {
   margin-bottom: 0.3rem;
@@ -189,14 +236,18 @@ header #navToggleClose {
   margin-bottom: 1rem;
   width: 95%;
 }
-#home div.homeLeft button {
+#home div.homeLeft .button {
   padding: 10px;
   width: 150px;
   border: none;
+  display: inline-block;
+  text-align: center;
+  font-size: 0.8rem;
 }
 #home div.homeRight {
   width: 100%;
   height: 17rem;
+  transition: opacity 2.8s ease-in-out;
 }
 #home div.homeRight .homeIllustration {
   background: url(assets/homeIllustration.png) no-repeat;
@@ -575,17 +626,16 @@ header #navToggleClose {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 2rem;
+  gap: 5rem;
 }
 #contact .contactLeft {
   width: 100%;
   text-align: center;
+  gap: 4rem;
 }
 #contact .topInfo {
   width: fit-content;
   margin: 0 auto;
-  margin-bottom: 3rem;
-  box-sizing: border-box;
 }
 #contact .topInfo div {
   display: flex;
@@ -626,7 +676,7 @@ header #navToggleClose {
   width: 100%;
 }
 #contact form {
-  width: 70%;
+  width: 75%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -643,7 +693,7 @@ header #navToggleClose {
   outline: none;
   caret-color: #28F1FE;
 }
-#contact form input[type=text], #contact form input[type=mail], #contact form textarea {
+#contact form input[type=text], #contact form input[type=email], #contact form textarea {
   margin-bottom: 1.2rem;
   padding: 15px 19px;
 }

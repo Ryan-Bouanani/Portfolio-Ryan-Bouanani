@@ -58,7 +58,7 @@ p {
     font-weight: 300;
     color: $grey;
 }
-button {
+button, .button {
     background: $blueHome;
     color: #ffff;
 }
@@ -85,12 +85,18 @@ p {
     margin: 0 auto;
     margin-bottom: 8rem;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 300px) {
     // all images not contact
     .homeIllustration, .skillsIllustration, .educationIllustration {
         width: 100% !important;
         height: 13rem !important;
     }
+}
+
+// * ANIMATION SCROLL
+div.elementsScroll, h2 {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
 }
 
 // * NAV
@@ -147,13 +153,53 @@ header {
     #navToggleClose {
       display: none;
     }
+    // ANIMATION 1
+    @media screen and (max-width: 830px) {
+        .navLinks {
+            perspective: 1000px;
+            li {
+                transform: rotate(-90deg) rotateY(90deg);
+                transform-origin: top right;
+                animation: animation1 1s ease forwards;
+                opacity: 0;
+            }
+            li:nth-child(2) {
+                animation-delay: 300ms;
+                transform-origin: top left;
+                transform: rotateZ(90deg) rotateY(-90deg);
+            }
+            li:nth-child(3) {
+                animation-delay: 600ms;
+            }
+            li:nth-child(4) {
+                animation-delay: 900ms;
+                transform-origin: top left;
+                transform: rotateZ(90deg) rotateY(-90deg);
+            }
+            li:nth-child(5) {
+                animation-delay: 1.2s;
+            }
+            li:nth-child(6) {
+                animation-delay: 1.5s;
+                transform-origin: top left;
+                transform: rotateZ(90deg) rotateY(-90deg);
+            }
+        }
+        @keyframes animation1 {
+            to {
+                transform: rotate(0);
+                opacity: 1;
+            }
+        }
+    }    
+
     // * responsive
     @media screen and (min-width: 830px) {
         nav {
             margin-top: 2rem;
             .navLinks {
                 position: unset;
-                // display: flex;
+                display: flex !important;
                 flex-direction: row;
                 right: unset;
                 top: unset;
@@ -162,6 +208,7 @@ header {
             }
             .navLinks li {
                 display: inline;
+                animation: none;
                 a {
                     background: transparent;
                     height: fit-content;
@@ -171,14 +218,10 @@ header {
                 }
             }
             #navToggleOpen {
-                display: none;
+                display: none !important;
             }
         }
     }
-    @media screen and (max-width: 830px) {
-     
-    }
-
 }
 
 // * HOME
@@ -188,6 +231,7 @@ header {
     gap: 3rem;
     div.homeLeft {
         width: 95%;
+        transition: opacity 2.8s ease-in-out;
         h1 {
             margin-bottom: 0.3rem;
         }
@@ -195,15 +239,19 @@ header {
             margin-bottom: 1rem;
             width: 95%;
         }
-        button {
+        .button {
             padding: 10px;
             width: 150px;
             border: none;
+            display: inline-block;
+            text-align: center;
+            font-size: 0.8rem;
         }
     }
     div.homeRight {
         width: 100%;
         height: 17rem;
+        transition: opacity 2.8s ease-in-out;
         .homeIllustration {
             background: url(assets/homeIllustration.png) no-repeat;
             height: 100%;
@@ -301,8 +349,6 @@ header {
         }
     }
 }
-        
-    
 
 
 // * SKILLS
@@ -644,17 +690,16 @@ header {
         display: flex;
         align-items: center;
         flex-direction: column;
-        gap: 2rem;
+        gap: 5rem;
     }
     .contactLeft {
         width: 100%;
         text-align: center;
+        gap: 4rem;
     }
     .topInfo {
         width: fit-content;
         margin: 0 auto;
-        margin-bottom: 3rem;
-        box-sizing: border-box;
         div {
             display: flex;
             align-items: center;
@@ -695,7 +740,7 @@ header {
         width: 100%;
     }
     form {
-        width: 70%;
+        width: 75%;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
@@ -711,7 +756,7 @@ header {
             outline: none;
             caret-color: $brilliantBlue;
         }
-        input[type="text"], input[type="mail"], textarea {
+        input[type="text"], input[type="email"], textarea {
             margin-bottom: 1.2rem;
             padding: 15px 19px;
         }
