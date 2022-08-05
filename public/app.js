@@ -8,7 +8,8 @@ console.log(nav, openNavBtn, closeNavBtn);
 // open Navbar
 
 const openNav = () => {
-    nav.style.display = 'flex';
+    nav.classList.remove('none');
+    nav.classList.add('flex');
     openNavBtn.style.display = 'none';
     closeNavBtn.style.display = 'inline-block';
 };
@@ -16,7 +17,8 @@ openNavBtn.addEventListener('click', openNav);
 
 
 const closeNav = () => {
-    nav.style.display = 'none';
+    nav.classList.remove('flex');
+    nav.classList.add('none');
     openNavBtn.style.display = 'inline-block';
     closeNavBtn.style.display = 'none';
 };

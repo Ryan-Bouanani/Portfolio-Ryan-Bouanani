@@ -1,0 +1,129 @@
+
+@use './variables' as *;
+@use './mixins' as *;
+
+// * HOME
+
+#home {
+    position: relative;
+    gap: 3rem;
+    div.homeLeft {
+        width: 95%;
+        transition: opacity 2.8s ease-in-out;
+        h1 {
+            margin-bottom: 0.3rem;
+        }
+        p {
+            margin-bottom: 1rem;
+            width: 95%;
+        }
+        .button {
+            padding: 10px;
+            width: 150px;
+            border: none;
+            display: inline-block;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+    }
+    div.homeRight {
+        width: 100%;
+        height: 17rem;
+        transition: opacity 2.8s ease-in-out;
+        .homeIllustration {
+            background: url(assets/homeIllustration.png) no-repeat;
+            height: 100%;
+            width: 20rem;
+            margin: 0 auto;
+            background-size: contain;
+        }
+    }
+    .bubble {
+        background: url(assets/bubble.png);
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        background-size: contain;
+    }
+    span.bubble1 {
+        top: -10px;
+        left: 70%;
+    }
+    span.bubble2 {
+        bottom: 60%;
+        left: 55%;
+    }
+    span.bubble3 {
+        bottom: 25%;
+        left: 5%;
+    }
+
+}
+//  * responsive home
+@media screen and (max-width: 500px) {
+    #home {
+        div.homeLeft {
+            width: 100%;
+            p {
+                margin-bottom: 1rem;
+                width: 100%;
+            }
+        }
+    }
+}
+@media screen and (min-width: 700px) {
+    #home {
+        div.homeRight {
+        height: 23rem;
+            .homeIllustration {
+                width: 26rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    #home.container {
+        flex-direction: row;
+    }
+    #home {
+        span.bubble1 {
+            top: -10px;
+            left: 10%;
+        }
+        span.bubble2 {
+            bottom: 95%;
+            left: 80%;
+        }
+        span.bubble3 {
+            bottom: 18%;
+            left: 30%;
+        }
+    }
+    
+}
+@media screen and (min-width: 840px) {
+    #home {
+        div.homeLeft, div.homeRight {
+            width: 50%;
+        }
+        div.homeRight {
+        height: 26rem;
+            .homeIllustration {
+                width: 100%
+            }
+        }
+        span.bubble1 {
+            top: 0;
+            left: 15%;
+        }
+        span.bubble2 {
+            bottom: 65%;
+            left: 50%;
+        }
+        span.bubble3 {
+            bottom: 25%;
+            left: 30%;
+        }
+    }
+}

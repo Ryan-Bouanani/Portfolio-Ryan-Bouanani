@@ -1,0 +1,137 @@
+
+@use './variables' as *;
+@use './mixins' as *;
+
+// * EXPERIENCE PROFESSIONNEL 
+#professionalExperiences {
+    .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    // line timeline
+    .timeline::after {
+        content: "";
+        position: absolute;
+        width: 6px;
+        background: $brilliantBlue;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .expContainer {
+        position: relative;
+        background: transparent;
+        width: 50%;
+    }
+    .expContainer.left {
+        padding: 0 40px 10px 0px;
+    }
+    .expContainer.right {
+        padding: 0 0px 10px 40px;
+    }
+    .expContainer:last-child {
+        padding: 0 40px;
+    }
+    // circle & circle left 
+    .expContainer::after {
+        content: "";
+        position: absolute;
+        width: 27px;
+        height: 27px;
+        background: $blueCard;
+        right: 0;
+        transform: translateX(50%);
+        top: 0;
+        border-radius: 50%;
+        z-index: 1;
+    }
+    .expCard {
+        padding: 20px 30px;
+        border-radius: 10px;
+        position: relative;
+        background: $blueCard;
+        width: 100%;
+    }
+    .expCard > *:not(:last-child) {
+        margin-bottom: 0.2rem;
+    }
+    .left {
+        left: 0;
+    }
+    .right {
+        left: 50%;
+    }
+    // circle right
+    .right::after {
+        left: 0;
+        transform: translateX(-50%);
+    }
+    
+    // languette sur les cotés
+    .left::before , .right::before{
+        content: "";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        border: medium solid white;
+    }
+    .left::before {
+        right: 30px;
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent $blueCard;
+    }
+    .right::before {
+        left: 30px;
+        border-width: 10px 10px 10px 0px;
+        border-color: transparent $blueCard transparent transparent;
+    }  
+}
+
+// * responsive experience professionnel
+@media screen and (max-width: 370px) {
+    #professionalExperiences {
+        .timeline::after {
+            display: none;
+        }
+        .timeline .expContainer {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+        .expContainer::after {
+            display: none;
+        }
+        .expContainer::before {
+            display: none;
+        }
+    }
+}
+@media screen and (max-width: 700px) {
+    #professionalExperiences {   
+        .timeline::after {
+            left: 30px;
+        }
+        .timeline .expContainer {
+            width: 100%;
+            padding-left: 70px;
+            padding-right: 25px;
+        }
+        .expContainer::before {
+            left: 60px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0px;
+            border-color: transparent $blueCard transparent transparent;
+        }
+    
+        .left::after, .right::after {
+            left: 3px;
+            transform: translateX(50%);
+        }
+        .right {
+            left: 0;
+        }
+    }
+}

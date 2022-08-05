@@ -1,126 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-  background: #030D58;
-  color: white;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-li {
-  list-style: none;
-}
-
-h1 {
-  font-size: 35px;
-  font-weight: 700;
-}
-h1 span {
-  color: #0093E9;
-}
-
-h2 {
-  font-size: 23px;
-  font-weight: 500;
-  margin-bottom: 5rem;
-  text-align: center;
-}
-
-h3 {
-  font-size: 17px;
-  font-weight: 500;
-}
-
-h4 {
-  font-size: 16px;
-  font-weight: 300;
-}
-
-h5 {
-  font-size: 17px;
-  font-weight: 500;
-  color: #C3C3C3;
-}
-
-p {
-  font-size: 16px;
-  font-weight: 300;
-  color: #C3C3C3;
-}
-
-button, .button {
-  background: #0093E9;
-  color: white;
-}
-
-p.date {
-  color: #28F1FE;
-}
-
-p {
-  color: #C3C3C3;
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-  background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #28F1FE;
-}
-
-.container {
-  max-width: 960px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 90%;
-  margin: 0 auto;
-  margin-bottom: 8rem;
-}
-
-@media screen and (max-width: 300px) {
-  .homeIllustration, .skillsIllustration, .educationIllustration {
-    width: 100% !important;
-    height: 13rem !important;
-  }
-}
-div.elementsScroll, h2 {
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-}
-
 header {
   width: 100%;
   height: 30px;
   margin-bottom: 7rem;
 }
 header .logo, header .toggleBtn, header a {
-  color: white;
   background: transparent;
 }
 header nav {
-  position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  flex-direction: unset;
+  position: relative;
   height: 80px;
   width: 92%;
   margin: 0 auto;
 }
-header .logo:hover, header .navLinks li a:hover {
+header a.logo {
+  font-size: 1.1rem;
+}
+header a.logo:hover, header .navLinks li a:hover {
   color: #28F1FE;
 }
 header .navLinks {
@@ -138,20 +38,29 @@ header .navLinks li {
   box-shadow: -2rem 4rem 4rem rgba(0, 0, 0, 0.2);
 }
 header .navLinks li a {
+  display: flex;
+  align-items: center;
+  justify-content: unset;
+  flex-direction: unset;
   background: #132188;
   height: 4rem;
   width: 100%;
-  display: flex;
-  align-items: center;
   padding: 0 5rem 0 2.5rem;
   border-top: 1px solid #030D58;
 }
 header button.toggleBtn {
-  font-size: 1rem;
+  font-size: 1.3rem;
   border: none;
   cursor: pointer;
+  color: white;
 }
 header #navToggleClose {
+  display: none;
+}
+header .flex {
+  display: flex;
+}
+header .none {
   display: none;
 }
 @media screen and (max-width: 830px) {
@@ -192,18 +101,18 @@ header #navToggleClose {
     }
   }
 }
+
 @media screen and (min-width: 830px) {
   header nav {
     margin-top: 2rem;
   }
-  header nav .navLinks {
-    position: unset;
-    display: flex !important;
-    flex-direction: row;
-    right: unset;
-    top: unset;
+  header nav ul.navLinks {
+    all: unset;
+    display: flex;
+    align-items: space-between;
+    justify-content: row;
+    flex-direction: unset;
     gap: 2rem;
-    align-items: unset;
   }
   header nav .navLinks li {
     display: inline;
@@ -212,15 +121,13 @@ header #navToggleClose {
   header nav .navLinks li a {
     background: transparent;
     height: fit-content;
-    color: white;
     padding: 0;
     border-top: 0;
   }
-  header nav #navToggleOpen {
+  header nav #navToggleOpen, header nav #navToggleClose {
     display: none !important;
   }
 }
-
 #home {
   position: relative;
   gap: 3rem;
@@ -287,13 +194,13 @@ header #navToggleClose {
 }
 @media screen and (min-width: 700px) {
   #home div.homeRight {
-    height: 21rem;
+    height: 23rem;
   }
   #home div.homeRight .homeIllustration {
-    width: 24rem;
+    width: 26rem;
   }
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 800px) {
   #home.container {
     flex-direction: row;
   }
@@ -315,7 +222,7 @@ header #navToggleClose {
     width: 50%;
   }
   #home div.homeRight {
-    height: 22rem;
+    height: 26rem;
   }
   #home div.homeRight .homeIllustration {
     width: 100%;
@@ -335,10 +242,10 @@ header #navToggleClose {
 }
 #skills .skillsContainer {
   display: flex;
-  width: 100%;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-direction: column-reverse;
+  width: 100%;
   gap: 3rem;
   text-align: center;
 }
@@ -355,18 +262,23 @@ header #navToggleClose {
 }
 #skills .skillsRight {
   display: flex;
-  flex-direction: row;
+  align-items: unset;
   justify-content: space-between;
+  flex-direction: row;
   width: 100%;
   max-width: 500px;
 }
 #skills .skillsRight .frontEnd > div, #skills .skillsRight .backEnd > div, #skills .skillsRight .webdesign > div, #skills .skillsRight .cms > div {
   display: flex;
-  align-items: center;
+  align-items: unset;
+  justify-content: unset;
+  flex-direction: unset;
   gap: 0.5rem;
 }
 #skills .skillsRight .frontEnd, #skills .skillsRight .backEnd, #skills .skillsRight .webdesign, #skills .skillsRight .cms {
   display: flex;
+  align-items: unset;
+  justify-content: unset;
   flex-direction: column;
   gap: 1rem;
 }
@@ -386,7 +298,7 @@ header #navToggleClose {
     height: 21rem;
   }
   #skills .skillsLeft .skillsIllustration {
-    width: 24rem;
+    width: 25rem;
   }
 }
 @media screen and (min-width: 890px) {
@@ -397,28 +309,35 @@ header #navToggleClose {
     width: 50%;
   }
   #skills .skillsLeft {
-    height: 22rem;
+    height: 26rem;
   }
   #skills .skillsLeft .skillsIllustration {
     width: 100%;
   }
 }
 #projects .ProjectsCardsContainer {
-  width: 100%;
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
+  justify-content: space-evenly;
+  flex-direction: unset;
+  width: 100%;
   flex-wrap: wrap;
   gap: 2rem;
 }
 #projects .projectCard {
+  position: relative;
   width: 80%;
-  height: 300px;
+  height: 400px;
   background-color: #132188;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 10px;
+  border-radius: 40px 0 40px 0;
+  overflow: hidden;
+}
+#projects .projectCard img {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
   border-radius: 40px 0 40px 0;
 }
 @media screen and (min-width: 650px) {
@@ -430,15 +349,17 @@ header #navToggleClose {
 #education .educationContainer {
   display: flex;
   align-items: center;
+  justify-content: unset;
   flex-direction: column;
   width: 100%;
   gap: 5rem;
 }
 #education .educationLeft {
-  width: 80%;
   display: flex;
   align-items: center;
+  justify-content: unset;
   flex-direction: column;
+  width: 85%;
   text-align: center;
   gap: 2rem;
 }
@@ -446,12 +367,12 @@ header #navToggleClose {
   background: #132188;
   width: 100%;
   height: 160px;
-  padding: 0 25px;
+  padding: 5px 25px;
   border-radius: 10px;
   display: flex;
   align-items: center;
-  flex-direction: column;
   justify-content: center;
+  flex-direction: column;
   gap: 0.3rem;
 }
 #education .educationRight {
@@ -465,6 +386,7 @@ header #navToggleClose {
   margin: 0 auto;
   background-size: contain;
 }
+
 @media screen and (max-width: 400px) {
   #education .educationCard {
     height: 260px;
@@ -501,7 +423,6 @@ header #navToggleClose {
     width: 24rem;
   }
 }
-
 #professionalExperiences .timeline {
   position: relative;
   max-width: 1200px;
@@ -582,6 +503,7 @@ header #navToggleClose {
   border-width: 10px 10px 10px 0px;
   border-color: transparent #132188 transparent transparent;
 }
+
 @media screen and (max-width: 370px) {
   #professionalExperiences .timeline::after {
     display: none;
@@ -620,12 +542,12 @@ header #navToggleClose {
     left: 0;
   }
 }
-
 #contact .contactContainer {
-  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: unset;
   flex-direction: column;
+  width: 100%;
   gap: 5rem;
 }
 #contact .contactLeft {
@@ -640,6 +562,8 @@ header #navToggleClose {
 #contact .topInfo div {
   display: flex;
   align-items: center;
+  justify-content: unset;
+  flex-direction: unset;
   height: 4rem;
   padding: 15px 20px;
   border-radius: 10px;
@@ -676,11 +600,12 @@ header #navToggleClose {
   width: 100%;
 }
 #contact form {
+  display: flex;
+  align-items: unset;
+  justify-content: unset;
+  flex-direction: column;
   width: 75%;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 #contact form textarea {
   resize: none;
@@ -689,29 +614,32 @@ header #navToggleClose {
   border: solid 4px #28F1FE;
   background: #132188;
   border-radius: 20px;
-  color: white;
   outline: none;
   caret-color: #28F1FE;
 }
 #contact form input[type=text], #contact form input[type=email], #contact form textarea {
   margin-bottom: 1.2rem;
-  padding: 15px 19px;
+  padding: 17px 19px;
 }
 #contact form input::placeholder, #contact form textarea::placeholder {
   color: white;
-  font-size: 13px;
+  font-size: 0.9rem;
 }
 #contact form input[type=submit] {
   margin: 0 auto;
-  padding: 5px 20px;
+  padding: 10px 22px;
+  color: white;
 }
 #contact form label {
   margin-left: 0.4rem;
   margin-bottom: 0.3rem;
 }
+
 @media screen and (min-width: 640px) {
   #contact .contactLeft {
     display: flex;
+    align-items: unset;
+    justify-content: unset;
     flex-direction: row;
   }
   #contact .contactLeft .contactIllustration {
@@ -719,6 +647,9 @@ header #navToggleClose {
   }
 }
 @media screen and (min-width: 850px) {
+  #contact form {
+    width: 90%;
+  }
   #contact .contactLeft {
     flex-direction: column;
   }
@@ -726,13 +657,119 @@ header #navToggleClose {
     flex-direction: row;
   }
 }
-
 footer {
   text-align: center;
   margin-bottom: 5rem;
 }
 footer p:first-child {
   margin-bottom: 0.7rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  background: #030D58;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+li {
+  list-style: none;
+}
+
+h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+}
+h1 span {
+  color: #0093E9;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #C3C3C3;
+}
+
+p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #C3C3C3;
+}
+
+label {
+  font-size: 1.2rem;
+}
+
+button, .button {
+  background: #0093E9;
+}
+
+p.date {
+  color: #28F1FE;
+}
+
+p {
+  color: #C3C3C3;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #28F1FE;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 960px;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 8rem;
+}
+
+@media screen and (max-width: 300px) {
+  .homeIllustration, .skillsIllustration, .educationIllustration {
+    width: 100% !important;
+    height: 13rem !important;
+  }
+}
+div.elementsScroll, h2 {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
 }
 
 /*# sourceMappingURL=style.css.map */

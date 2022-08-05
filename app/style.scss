@@ -1,12 +1,19 @@
+
+@use './scss/variables' as *;
+@use './scss/mixins' as *;
+@use './scss/header';
+@use './scss/home';
+@use './scss/skills';
+@use './scss/projects';
+@use './scss/education';
+@use './scss/professionalExperiences';
+@use './scss/contact';
+@use './scss/footer';
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 
-$background: #030D58;
-$blueHome: #0093E9;
-$blueCard: #132188;
-$brilliantBlue: #28F1FE;
-$grey: #C3C3C3;
-// $paragraphe: #F3F1F1;
+
 
 * {
     margin: 0;
@@ -15,52 +22,55 @@ $grey: #C3C3C3;
     scroll-behavior: smooth;
 }
 body {
-    font-family: 'Roboto', sans-serif;
+    position: relative;
+    font-family: $font;
     background: $background;
-    color: #ffff;
+    color: $white;
 }
 a {
     text-decoration: none;
-    color: #ffff;
+    color: $white;
 }
 li {
     list-style: none;
 }
 
 h1 {
-    font-size: 35px;
+    font-size: $fontSizeH1;
     font-weight: 700;
     span {
         color: $blueHome;
     }
 }
 h2 {
-    font-size: 23px;
+    font-size: $fontSizeH2;
     font-weight: 500;
     margin-bottom: 5rem;
     text-align: center;
 }
 h3 {
-    font-size: 17px;
+    font-size: $fontSizeH3;
     font-weight: 500;
 }
 h4 {
-    font-size: 16px;
-    font-weight: 300;
+    font-size: $fontSizeH4;
+    font-weight: 400;
 }
 h5 {
-    font-size: 17px;
+    font-size: 1.2rem;
     font-weight: 500;
     color: $grey;
 }
 p {
-    font-size: 16px;
+    font-size: $fontSizeP;
     font-weight: 300;
     color: $grey;
 }
+label {
+    font-size: $fontSizeLabel;
+}
 button, .button {
     background: $blueHome;
-    color: #ffff;
 }
 p.date {
     color: $brilliantBlue;
@@ -76,11 +86,8 @@ p {
     background-color: $brilliantBlue;
 }
 .container {
+    @include flex(center, center, column);
     max-width: 960px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     width: 90%;
     margin: 0 auto;
     margin-bottom: 8rem;
@@ -99,580 +106,6 @@ div.elementsScroll, h2 {
     transition: opacity 1.5s ease-in-out;
 }
 
-// * NAV
-
-header {
-    .logo, .toggleBtn, a {
-        color: #ffff;
-        background: transparent;
-    }
-    width: 100%;
-    height: 30px;
-    margin-bottom: 7rem;
-    nav {
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 80px;
-        width: 92%;
-        margin: 0 auto;
-    }
-    .logo:hover, .navLinks li a:hover {
-        color: $brilliantBlue;
-    }
-    .navLinks {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        display: none;
-        flex-direction: column;
-        gap: 0;
-        align-items: flex-start;
-        z-index: 1;
-        li {
-            width: 100%;
-            box-shadow: -2rem 4rem 4rem rgb(0, 0, 0, 0.2);
-        }
-        li a {
-            background: $blueCard;
-            height: 4rem;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            padding: 0 5rem 0 2.5rem;
-            border-top: 1px solid $background;
-            // justify-content: center;
-        }
-    }
-    button.toggleBtn {
-        font-size: 1rem;
-        border: none;
-        cursor: pointer;
-    }
-    #navToggleClose {
-      display: none;
-    }
-    // ANIMATION 1
-    @media screen and (max-width: 830px) {
-        .navLinks {
-            perspective: 1000px;
-            li {
-                transform: rotate(-90deg) rotateY(90deg);
-                transform-origin: top right;
-                animation: animation1 1s ease forwards;
-                opacity: 0;
-            }
-            li:nth-child(2) {
-                animation-delay: 300ms;
-                transform-origin: top left;
-                transform: rotateZ(90deg) rotateY(-90deg);
-            }
-            li:nth-child(3) {
-                animation-delay: 600ms;
-            }
-            li:nth-child(4) {
-                animation-delay: 900ms;
-                transform-origin: top left;
-                transform: rotateZ(90deg) rotateY(-90deg);
-            }
-            li:nth-child(5) {
-                animation-delay: 1.2s;
-            }
-            li:nth-child(6) {
-                animation-delay: 1.5s;
-                transform-origin: top left;
-                transform: rotateZ(90deg) rotateY(-90deg);
-            }
-        }
-        @keyframes animation1 {
-            to {
-                transform: rotate(0);
-                opacity: 1;
-            }
-        }
-    }    
-
-    // * responsive
-    @media screen and (min-width: 830px) {
-        nav {
-            margin-top: 2rem;
-            .navLinks {
-                position: unset;
-                display: flex !important;
-                flex-direction: row;
-                right: unset;
-                top: unset;
-                gap: 2rem;
-                align-items: unset;
-            }
-            .navLinks li {
-                display: inline;
-                animation: none;
-                a {
-                    background: transparent;
-                    height: fit-content;
-                    color: #ffff;
-                    padding: 0;
-                    border-top: 0;
-                }
-            }
-            #navToggleOpen {
-                display: none !important;
-            }
-        }
-    }
-}
-
-// * HOME
-
-#home {
-    position: relative;
-    gap: 3rem;
-    div.homeLeft {
-        width: 95%;
-        transition: opacity 2.8s ease-in-out;
-        h1 {
-            margin-bottom: 0.3rem;
-        }
-        p {
-            margin-bottom: 1rem;
-            width: 95%;
-        }
-        .button {
-            padding: 10px;
-            width: 150px;
-            border: none;
-            display: inline-block;
-            text-align: center;
-            font-size: 0.8rem;
-        }
-    }
-    div.homeRight {
-        width: 100%;
-        height: 17rem;
-        transition: opacity 2.8s ease-in-out;
-        .homeIllustration {
-            background: url(assets/homeIllustration.png) no-repeat;
-            height: 100%;
-            width: 20rem;
-            margin: 0 auto;
-            background-size: contain;
-        }
-    }
-    .bubble {
-        background: url(assets/bubble.png);
-        width: 15px;
-        height: 15px;
-        position: absolute;
-        background-size: contain;
-    }
-    span.bubble1 {
-        top: -10px;
-        left: 70%;
-    }
-    span.bubble2 {
-        bottom: 60%;
-        left: 55%;
-    }
-    span.bubble3 {
-        bottom: 25%;
-        left: 5%;
-    }
-
-}
-//  * responsive
-@media screen and (max-width: 500px) {
-    #home {
-        div.homeLeft {
-            width: 100%;
-            p {
-                margin-bottom: 1rem;
-                width: 100%;
-            }
-        }
-    }
-}
-@media screen and (min-width: 700px) {
-    #home {
-        div.homeRight {
-        height: 21rem;
-            .homeIllustration {
-                width: 24rem;
-            }
-        }
-    }
-}
-
-@media screen and (min-width: 750px) {
-    #home.container {
-        flex-direction: row;
-    }
-    #home {
-        span.bubble1 {
-            top: -10px;
-            left: 10%;
-        }
-        span.bubble2 {
-            bottom: 95%;
-            left: 80%;
-        }
-        span.bubble3 {
-            bottom: 18%;
-            left: 30%;
-        }
-    }
-    
-}
-@media screen and (min-width: 840px) {
-    #home {
-        div.homeLeft, div.homeRight {
-            width: 50%;
-        }
-        div.homeRight {
-        height: 22rem;
-            .homeIllustration {
-                width: 100%
-            }
-        }
-        span.bubble1 {
-            top: 0;
-            left: 15%;
-        }
-        span.bubble2 {
-            bottom: 65%;
-            left: 50%;
-        }
-        span.bubble3 {
-            bottom: 25%;
-            left: 30%;
-        }
-    }
-}
-
-
-// * SKILLS
-#skills {
-    .skillsContainer {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column-reverse;
-        gap: 3rem;
-        text-align: center;
-    }
-    .skillsLeft {
-        width: 100%;
-        height: 17rem;
-        .skillsIllustration {
-            background: url(assets/skillsIllustation.png) no-repeat;
-            width: 20rem;
-            height: 100%;
-            background-size: contain;
-            margin: 0 auto;
-        }
-    }
-    .skillsRight {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-        max-width: 500px;
-        // * ALL DIV ITEM
-        .frontEnd > div, .backEnd > div, .webdesign > div , .cms > div {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-         // * ALL PARENT ITEM
-        .frontEnd, .backEnd, .webdesign, .cms {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        h3, .webdesign:last-child {
-        margin-bottom: 1rem;
-        }
-    }
-
-}
-
-// * responsive
-@media screen and (max-width: 500px) {
-    #skills {
-        .skillsRight {
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-        }
-    }
-}
-@media screen and (min-width: 700px) {
-    #skills {
-        .skillsLeft {
-        height: 21rem;
-            .skillsIllustration {
-                width: 24rem;
-            }
-        }
-    }
-}
-@media screen and (min-width: 890px) {
-    #skills {
-        .skillsContainer {
-            flex-direction: row;
-        }
-        .skillsLeft, .skillsRight {
-            width: 50%;
-        }
-        .skillsLeft {
-        height: 22rem;
-            .skillsIllustration {
-                width: 100%
-            }
-        }
-    }
-}
-
-
-// * PROJECTS
-#projects {
-    .ProjectsCardsContainer {
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 2rem;
-    }
-    .projectCard {
-        width: 80%;
-        height: 300px;
-        background-color: $blueCard;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        // width: 190px;
-        // height: 254px;
-        border-radius: 40px 0 40px 0;
-    }
-    @media screen and (min-width: 650px) {
-        .projectCard {
-            width: 295px;
-        }
-    }
-}
-
-//  * DIPLOME ET FORMATION
-#education {
-    .educationContainer {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        width: 100%;
-        gap: 5rem;
-    }
-    .educationLeft {
-        width: 80%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
-    }
-    .educationCard {
-        background: $blueCard;
-        width: 100%;
-        height: 160px;
-        padding: 0 25px;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        gap: 0.3rem;
-    }
-    .educationRight {
-        width: 100%;
-        height: 17rem;
-        .educationIllustration {
-            background: url(assets/educationIllustration.png) no-repeat;
-            width: 290px;
-            height: 100%;
-            margin: 0 auto;
-            background-size: contain;
-        }
-    }
-
-    @media screen and (max-width: 400px) {
-            .educationCard {
-                height: 260px;
-            }
-    }
-    @media screen and (min-width: 780px) {
-        .educationLeft {
-            width: 100%;
-            flex-direction: row;
-        }
-    }
-    @media screen and (min-width: 700px) {
-        .educationRight {
-            height: 21rem;
-            .educationIllustration {
-                width: 23rem;
-            }
-        }
-    }
-    @media screen and (min-width: 900px) {
-        .educationContainer {
-            flex-direction: row;
-        }
-        .educationLeft, .educationRight {
-            width: 50%
-;        }
-        .educationLeft {
-            flex-direction: column;
-        }
-        .educationRight {
-            height: 22rem;
-            .educationIllustration {
-                width: 24rem;
-            }
-        }
-    }
-}
-
-// * EXPERIENCE PROFESSIONNEL 
-#professionalExperiences {
-    .timeline {
-        position: relative;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    // ligne
-    .timeline::after {
-        content: "";
-        position: absolute;
-        width: 6px;
-        background: $brilliantBlue;
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    .expContainer {
-        position: relative;
-        background: transparent;
-        width: 50%;
-    }
-    .expContainer.left {
-        padding: 0 40px 10px 0px;
-    }
-    .expContainer.right {
-        padding: 0 0px 10px 40px;
-    }
-    .expContainer:last-child {
-        padding: 0 40px;
-    }
-    // circle & circle left 
-    .expContainer::after {
-        content: "";
-        position: absolute;
-        width: 27px;
-        height: 27px;
-        background: $blueCard;
-        right: 0;
-        transform: translateX(50%);
-        top: 0;
-        border-radius: 50%;
-        z-index: 1;
-    }
-    .expCard {
-        padding: 20px 30px;
-        border-radius: 10px;
-        position: relative;
-        background: $blueCard;
-        width: 100%;
-    }
-    .expCard > *:not(:last-child) {
-        margin-bottom: 0.2rem;
-    }
-    .left {
-        left: 0;
-    }
-    .right {
-        left: 50%;
-    }
-    // circle right
-    .right::after {
-        left: 0;
-        transform: translateX(-50%);
-    }
-    
-    // languette sur les cotes
-    .left::before , .right::before{
-        content: "";
-        height: 0;
-        position: absolute;
-        top: 22px;
-        width: 0;
-        z-index: 1;
-        border: medium solid white;
-    }
-    .left::before {
-        right: 30px;
-        border-width: 10px 0 10px 10px;
-        border-color: transparent transparent transparent $blueCard;
-    }
-    .right::before {
-        left: 30px;
-        border-width: 10px 10px 10px 0px;
-        border-color: transparent $blueCard transparent transparent;
-    }
-
-    // * responsive
-    @media screen and (max-width: 370px) {
-        .timeline::after {
-            display: none;
-        }
-        .timeline .expContainer {
-            padding-left: 0 !important;
-            padding-right: 0 !important;
-        }
-        .expContainer::after {
-            display: none;
-        }
-        .expContainer::before {
-            display: none;
-        }
-    }
-    @media screen and (max-width: 700px) {
-        .timeline::after {
-            left: 30px;
-        }
-        .timeline .expContainer {
-            width: 100%;
-            padding-left: 70px;
-            padding-right: 25px;
-        }
-        .expContainer::before {
-            left: 60px;
-            border: medium solid white;
-            border-width: 10px 10px 10px 0px;
-            border-color: transparent $blueCard transparent transparent;
-        }
-
-        .left::after, .right::after {
-            left: 3px;
-            transform: translateX(50%);
-        }
-        .right {
-            left: 0;
-        }
-
-    }
 
 
 
@@ -682,122 +115,8 @@ header {
 
 
 
-}
-// * CONTACT  
-#contact {
-    .contactContainer {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        gap: 5rem;
-    }
-    .contactLeft {
-        width: 100%;
-        text-align: center;
-        gap: 4rem;
-    }
-    .topInfo {
-        width: fit-content;
-        margin: 0 auto;
-        div {
-            display: flex;
-            align-items: center;
-            height: 4rem;
-            padding: 15px 20px;
-            border-radius: 10px;
-            transition: 100ms ease-in-out;
-        }
-        div:hover {
-            border: solid 4px $brilliantBlue;
-            background: $blueCard;
-        }
-        .telIcon {
-            background: url(assets/iconesContact/phone.png);
-        }
-        .mailIcon {
-            background: url(assets/iconesContact/mail.png);
-        }
-        .locationIcon {
-            background: url(assets/iconesContact/location.png);
-        }
-        .telIcon, .mailIcon, .locationIcon {
-            height: 22px;
-            width: 22px;
-            background-size: cover;
-            margin-right: 1.5rem;
-        }
-    }
-    .contactIllustration {
-        display: none;
-        background: url(assets/contactIllustration.png) no-repeat;
-        width: 220px;
-        margin: 0 auto;
-        height: 12rem;
-        background-size: contain;
-    }
-    .contactRight {
-        width: 100%;
-    }
-    form {
-        width: 75%;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        textarea {
-            resize: none;
-        }
-        input, textarea {
-            border: solid 4px $brilliantBlue;
-            background: $blueCard;    
-            border-radius: 20px;
-            color: #ffff;  
-            outline: none;
-            caret-color: $brilliantBlue;
-        }
-        input[type="text"], input[type="email"], textarea {
-            margin-bottom: 1.2rem;
-            padding: 15px 19px;
-        }
-        input::placeholder, textarea::placeholder {
-            color: #ffff;
-            font-size: 13px;
-        }
-        input[type="submit"] {
-            margin: 0 auto;
-            padding: 5px 20px;
-        }
-        label {
-            margin-left: 0.4rem;
-            margin-bottom: 0.3rem;
-        }
-    }
 
-    @media screen and (min-width: 640px) {
-        .contactLeft {
-            display: flex;
-            flex-direction: row;
-            .contactIllustration {
-                display: block;
-            }
-        }
-    }
-    @media screen and (min-width: 850px) {
-        .contactLeft {
-            flex-direction: column;
-        }
-        .contactContainer {
-            flex-direction: row;
-        }
-    }
 
-}
 
-footer {
-    text-align: center;
-    margin-bottom: 5rem;
-    p:first-child {
-        margin-bottom: 0.7rem;
-    }
-}
+
+

@@ -1,0 +1,116 @@
+
+@use './variables' as *;
+@use './mixins' as *;
+
+// * CONTACT  
+#contact {
+    .contactContainer {
+        @include flex(center, $direction: column);
+        width: 100%;
+        gap: 5rem;
+    }
+    .contactLeft {
+        width: 100%;
+        text-align: center;
+        gap: 4rem;
+    }
+    .topInfo {
+        width: fit-content;
+        margin: 0 auto;
+        div {
+            @include flex($alignItem: center);
+            height: 4rem;
+            padding: 15px 20px;
+            border-radius: 10px;
+            transition: 100ms ease-in-out;
+        }
+        div:hover {
+            border: solid 4px $brilliantBlue;
+            background: $blueCard;
+        }
+        .telIcon {
+            background: url(assets/iconesContact/phone.png);
+        }
+        .mailIcon {
+            background: url(assets/iconesContact/mail.png);
+        }
+        .locationIcon {
+            background: url(assets/iconesContact/location.png);
+        }
+        .telIcon, .mailIcon, .locationIcon {
+            height: 22px;
+            width: 22px;
+            background-size: cover;
+            margin-right: 1.5rem;
+        }
+    }
+    .contactIllustration {
+        display: none;
+        background: url(assets/contactIllustration.png) no-repeat;
+        width: 220px;
+        margin: 0 auto;
+        height: 12rem;
+        background-size: contain;
+    }
+    .contactRight {
+        width: 100%;
+    }
+    form {
+        @include flex($direction: column);
+        width: 75%;
+        margin: 0 auto;
+
+        textarea {
+            resize: none;
+        }
+        input, textarea {
+            border: solid 4px $brilliantBlue;
+            background: $blueCard;    
+            border-radius: 20px;
+            outline: none;
+            caret-color: $brilliantBlue;
+        }
+        input[type="text"], input[type="email"], textarea {
+            margin-bottom: 1.2rem;
+            padding: 17px 19px;
+        }
+        input::placeholder, textarea::placeholder {
+            color: $white;
+            font-size: 0.9rem;
+        }
+        input[type="submit"] {
+            margin: 0 auto;
+            padding: 10px 22px;
+            color: $white;  
+        }
+        label {
+            margin-left: 0.4rem;
+            margin-bottom: 0.3rem;
+        }
+    }    
+}
+
+// * responsive contact
+@media screen and (min-width: 640px) {
+    #contact {
+        .contactLeft {
+            @include flex($direction: row);
+            .contactIllustration {
+                display: block;
+            }
+        }
+    }
+}
+@media screen and (min-width: 850px) {
+    #contact {
+        form {
+            width: 90%;
+        }
+        .contactLeft {
+            flex-direction: column;
+        }
+        .contactContainer {
+            flex-direction: row;
+        }       
+    }
+}
