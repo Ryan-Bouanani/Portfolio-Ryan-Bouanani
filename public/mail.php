@@ -28,5 +28,7 @@ if (!empty($_POST['name']) && !empty($_POST['mail']) && !empty($_POST['object'])
         header('Location:index.php');
     };
     
+} else {
+    header('Location:index.php');
 }
 ?>
