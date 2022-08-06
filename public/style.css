@@ -653,9 +653,6 @@ header .none {
   #contact form {
     width: 90%;
   }
-  #contact .contactLeft {
-    flex-direction: column;
-  }
   #contact .contactContainer {
     flex-direction: row;
   }
@@ -761,7 +758,7 @@ p {
   max-width: 960px;
   width: 90%;
   margin: 0 auto;
-  margin-bottom: 8rem;
+  margin-bottom: 9.5rem;
 }
 
 @media screen and (max-width: 300px) {
