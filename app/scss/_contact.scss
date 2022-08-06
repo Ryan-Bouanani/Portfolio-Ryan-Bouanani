@@ -8,6 +8,9 @@
         @include flex(center, $direction: column);
         width: 100%;
         gap: 5rem;
+        input, textarea {
+            color: $white;
+        }
     }
     .contactLeft {
         width: 100%;

@@ -550,6 +550,9 @@ header .none {
   width: 100%;
   gap: 5rem;
 }
+#contact .contactContainer input, #contact .contactContainer textarea {
+  color: white;
+}
 #contact .contactLeft {
   width: 100%;
   text-align: center;

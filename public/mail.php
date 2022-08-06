@@ -3,11 +3,10 @@ if (!empty($_POST['name']) && !empty($_POST['mail']) && !empty($_POST['object'])
 
 
     // Expediteur
-    $to  = $_POST['name'];
+    $to  = '<ryan42426@gmail.com>';
     
     // Sujet
     $subject = $_POST['object'];
-    
     
     // Message
     $message = $_POST['name'] . ': '. $_POST['message'];
@@ -24,7 +23,10 @@ if (!empty($_POST['name']) && !empty($_POST['mail']) && !empty($_POST['object'])
     if (mail($to, $subject, $message, $headers)) {
         echo 'le mail est envoye';
     } else {
+    
         echo 'le mail n\'a pas été envoyer';
+        header('Location:index.php');
     };
+    
 }
 ?>
