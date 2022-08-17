@@ -2,8 +2,9 @@
 const nav = document.querySelector('.navLinks');
 const openNavBtn = document.querySelector('nav #navToggleOpen');
 const closeNavBtn = document.querySelector('nav #navToggleClose');
-const elementsAppareance = document.querySelectorAll('.elementsScroll, h2')
-console.log(nav, openNavBtn, closeNavBtn);
+const elementsAppareance = document.querySelectorAll('.elementsScroll, h2');
+let arrowScrollTop = document.querySelector('.arrowScrollTop');
+
 
 // open Navbar
 
@@ -35,7 +36,6 @@ let options = {
 }
 
 function handleIntersect(entries) {
-    console.log(entries);
 
     entries.forEach(entry => {
         // si entry est dans notre viewport alors opacity 1
@@ -50,6 +50,27 @@ const observer = new IntersectionObserver(handleIntersect, options);
 elementsAppareance.forEach(element => {
     observer.observe(element);
 });
+
+
+// arrow scroll top appareance on scroll
+
+window.onscroll = function() {
+    appareanceArrowScrollTop();
+};
+
+function scrollTop() {
+    window.scrollTo(0, 0)
+    console.log(arrowScrollTop);
+}
+arrowScrollTop.addEventListener('click', scrollTop);
+
+function appareanceArrowScrollTop() {
+    if (window.pageYOffset >= 1800) {
+      arrowScrollTop.classList.add("display")
+    } else {
+      arrowScrollTop.classList.remove("display");
+    }
+  }
 
 
 

@@ -4,33 +4,68 @@
 
 // * PROJECTS
 #projects {
+    position: relative;
     .ProjectsCardsContainer {
+        position: relative;
         @include flex(center, space-evenly);
         width: 100%;
         flex-wrap: wrap;
-        gap: 2rem;
+        gap: 5rem;
     }
     .projectCard {
         position: relative;
-        width: 80%;
-        height: 400px;
+        max-width: 280px;
+        height: 480px;
         background-color: $blueCard;
-        border-radius: 10px;
-        border-radius: 40px 0 40px 0;
-        overflow: hidden;
+        padding: 20px 30px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 5px 202px rgba(0,0,0,0.5);
+        transition: 0.3s ease-in-out;
+        border-radius: 0 40px 0 40px ;
 
         img {
-            width: 100%;
-            height: 100%;
-        
-            background-size: contain;
-            background-position: center;
-            border-radius: 40px 0 40px 0;
+            width: 260px;
+            height: 320px;
+            position: relative;
+            top: -65px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            object-position: top;
+        }
+        div.content h3 {
+            margin-bottom: 0.5rem;
         }
     }
+    div.content {
+        position: relative;
+        margin-top: -140px;     
+        text-align: center;
+        visibility: visible;
+        opacity: 1;
+        margin-top: -45px;
+        transition: 0.2s ease-in-out;
+    }
+
     @media screen and (min-width: 650px) {
         .projectCard {
             width: 295px;
+            height: 310px;
+        }
+        .projectCard:hover {
+            height: 480px;
+        }
+        div.projectCard:hover div.content {
+            visibility: visible;
+            opacity: 1;
+            margin-top: -45px;
+        }
+        div.content {    
+            visibility: hidden;
+            opacity: 0;        
         }
     }
 }
