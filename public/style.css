@@ -820,7 +820,7 @@ div.elementsScroll, h2 {
   position: fixed;
   right: -50px;
   bottom: 40px;
-  background: url(/public/assets/arrowScrollTop.png) no-repeat;
+  background: url(./assets/arrowScrollTop.png) no-repeat;
   width: 40px;
   height: 40px;
   background-size: cover;
