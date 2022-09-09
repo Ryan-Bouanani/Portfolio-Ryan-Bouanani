@@ -97,7 +97,7 @@
 @media screen and (min-width: 640px) {
     #contact {
         .contactLeft {
-            @include flex($direction: row);
+            @include flex($direction: column);
             .contactIllustration {
                 display: block;
             }
@@ -109,9 +109,9 @@
         form {
             width: 90%;
         }
-        // .contactLeft {
-        //     flex-direction: column;
-        // }
+        .contactLeft {
+            flex-direction: column;
+        }
         .contactContainer {
             flex-direction: row;
         }       

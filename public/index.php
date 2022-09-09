@@ -148,15 +148,6 @@
                         <p>Création d'une application de chat en PHP SQL et AJAX avec formulaire d'inscription / connexion, barre de recherche d'utilisateur et message en temps réel</p>
                         </div>
                 </div>
-                <div class="projectCard elementsScroll">
-                    <a href="https://github.com/Ryan-Bouanani/App_Meteo">
-                        <img src="./assets/appMeteo.PNG" alt="app-Meteo Javascript">
-                    </a>
-                    <div class="content">
-                        <h3>APP-METEO</h3>
-                        <p>Création d'une application méteo en Javascript avec api, localisation, îcones dynamique, température par jour et toutes les 3 heures</p>
-                        </div>
-                </div>
             </div>
         </section>
 
@@ -249,7 +240,7 @@
                         </div>
                         <div class="location">
                             <span class="locationIcon"></span>
-                            <h4>Loire, Rhone</h4>
+                            <h4>Saint Etienne, Lyon</h4>
                         </div>
                     </div>
                     <div class="contactIllustration"></div>

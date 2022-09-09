@@ -686,7 +686,7 @@ header .none {
     display: flex;
     align-items: unset;
     justify-content: unset;
-    flex-direction: row;
+    flex-direction: column;
   }
   #contact .contactLeft .contactIllustration {
     display: block;
@@ -695,6 +695,9 @@ header .none {
 @media screen and (min-width: 850px) {
   #contact form {
     width: 90%;
+  }
+  #contact .contactLeft {
+    flex-direction: column;
   }
   #contact .contactContainer {
     flex-direction: row;
