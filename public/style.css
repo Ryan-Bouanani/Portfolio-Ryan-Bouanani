@@ -697,7 +697,7 @@ header .none {
     width: 90%;
   }
   #contact .contactLeft {
-    flex-direction: column;
+    flex-direction: row;
   }
   #contact .contactContainer {
     flex-direction: row;
