@@ -1,5 +1,22 @@
 {
   "dependencies": {
-    "sass": "^1.53.0"
-  }
+    "sass": "^1.57.0"
+  },
+  "name": "porfolio-new",
+  "description": "��#\u0000 \u0000P\u0000o\u0000r\u0000t\u0000f\u0000o\u0000l\u0000i\u0000o\u0000-\u0000R\u0000y\u0000a\u0000n\u0000-\u0000B\u0000o\u0000u\u0000a\u0000n\u0000a\u0000n\u0000i\u0000\r\u0000 \u0000",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ryan-Bouanani/Portfolio-Ryan-Bouanani.git"
+  },
+  "author": "Ryan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ryan-Bouanani/Portfolio-Ryan-Bouanani/issues"
+  },
+  "homepage": "https://github.com/Ryan-Bouanani/Portfolio-Ryan-Bouanani#readme"
 }
