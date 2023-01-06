@@ -5,6 +5,17 @@
 // * PROJECTS
 #projects {
     position: relative;
+    .content .titleGit {
+        margin-bottom: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+         i {
+            background: transparent;
+            font-size: 1.3rem;
+        }
+    }
     .ProjectsCardsContainer {
         position: relative;
         @include flex(center, space-evenly);
@@ -35,9 +46,6 @@
             object-fit: cover;
             border-radius: 10px;
             object-position: top;
-        }
-        div.content h3 {
-            margin-bottom: 0.5rem;
         }
     }
     .projectCard img:hover {
