@@ -349,7 +349,7 @@ header .none {
 #projects .projectCard {
   position: relative;
   max-width: 480px;
-  height: 580px;
+  height: 630px;
   background-color: #132188;
   padding: 20px 30px;
   display: flex;
