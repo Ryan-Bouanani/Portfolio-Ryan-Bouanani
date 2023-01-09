@@ -349,7 +349,7 @@ header .none {
 #projects .projectCard {
   position: relative;
   max-width: 480px;
-  height: 630px;
+  height: 870px;
   background-color: #132188;
   padding: 20px 30px;
   display: flex;
@@ -384,6 +384,66 @@ header .none {
   opacity: 1;
   margin-top: -45px;
   transition: 0.2s ease-in-out;
+}
+@media screen and (min-width: 270px) {
+  #projects .projectCard {
+    height: 850px;
+  }
+}
+@media screen and (min-width: 285px) {
+  #projects .projectCard {
+    height: 830px;
+  }
+}
+@media screen and (min-width: 300px) {
+  #projects .projectCard {
+    height: 810px;
+  }
+}
+@media screen and (min-width: 310px) {
+  #projects .projectCard {
+    height: 780px;
+  }
+}
+@media screen and (min-width: 325) {
+  #projects .projectCard {
+    height: 760px;
+  }
+}
+@media screen and (min-width: 330px) {
+  #projects .projectCard {
+    height: 740px;
+  }
+}
+@media screen and (min-width: 335px) {
+  #projects .projectCard {
+    height: 710px;
+  }
+}
+@media screen and (min-width: 350px) {
+  #projects .projectCard {
+    height: 690px;
+  }
+}
+@media screen and (min-width: 370px) {
+  #projects .projectCard {
+    height: 670px;
+  }
+}
+@media screen and (min-width: 390px) {
+  #projects .projectCard {
+    height: 650px;
+  }
+}
+@media screen and (min-width: 410px) {
+  #projects .projectCard {
+    height: 630px;
+  }
+}
+@media screen and (min-width: 500px) {
+  #projects .projectCard {
+    height: 560px;
+  }
 }
 @media screen and (min-width: 650px) {
   #projects .projectCard {
