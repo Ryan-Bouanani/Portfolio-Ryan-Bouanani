@@ -156,6 +156,7 @@ header .none {
   display: inline-block;
   text-align: center;
   font-size: 0.8rem;
+  margin-top: 1rem;
 }
 #home div.homeRight {
   width: 100%;
@@ -390,7 +391,7 @@ header .none {
     height: 310px;
   }
   #projects .projectCard:hover {
-    height: 540px;
+    height: 550px;
   }
   #projects div.projectCard:hover div.content {
     visibility: visible;
