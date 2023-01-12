@@ -385,64 +385,126 @@ header .none {
   margin-top: -45px;
   transition: 0.2s ease-in-out;
 }
+#projects div.content .c-button {
+  margin-top: 1.2rem;
+  color: #000;
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+  padding: 0.9em 1.6em;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+}
+#projects div.content .c-button--gooey {
+  background: rgba(0, 147, 233, 0.5607843137);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 4px solid #06c8d9;
+  border-radius: 0;
+  position: relative;
+  transition: all 700ms ease;
+}
+#projects div.content .c-button--gooey .c-button__blobs {
+  height: 100%;
+  filter: url(#goo);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: -3px;
+  right: -1px;
+  z-index: -1;
+}
+#projects div.content .c-button--gooey .c-button__blobs div {
+  background-color: #06c8d9;
+  width: 34%;
+  height: 100%;
+  border-radius: 100%;
+  position: absolute;
+  transform: scale(1.4) translateY(125%) translateZ(0);
+  transition: all 700ms ease;
+}
+#projects div.content .c-button--gooey .c-button__blobs div:nth-child(1) {
+  left: -5%;
+}
+#projects div.content .c-button--gooey .c-button__blobs div:nth-child(2) {
+  left: 30%;
+  transition-delay: 60ms;
+}
+#projects div.content .c-button--gooey .c-button__blobs div:nth-child(3) {
+  left: 66%;
+  transition-delay: 25ms;
+}
+#projects div.content .c-button--gooey:hover .c-button__blobs div {
+  transform: scale(1.4) translateY(0) translateZ(0);
+}
+@media screen and (min-width: 250px) {
+  #projects .projectCard {
+    height: 1000px;
+  }
+}
 @media screen and (min-width: 270px) {
   #projects .projectCard {
-    height: 850px;
+    height: 950px;
   }
 }
 @media screen and (min-width: 285px) {
   #projects .projectCard {
-    height: 830px;
+    height: 920px;
   }
 }
 @media screen and (min-width: 300px) {
   #projects .projectCard {
-    height: 810px;
+    height: 890px;
   }
 }
 @media screen and (min-width: 310px) {
   #projects .projectCard {
-    height: 780px;
+    height: 850px;
   }
 }
-@media screen and (min-width: 325) {
+@media screen and (min-width: 325px) {
   #projects .projectCard {
-    height: 760px;
+    height: 810px;
   }
 }
 @media screen and (min-width: 330px) {
   #projects .projectCard {
-    height: 740px;
+    height: 800px;
   }
 }
 @media screen and (min-width: 335px) {
   #projects .projectCard {
-    height: 710px;
+    height: 780px;
   }
 }
 @media screen and (min-width: 350px) {
   #projects .projectCard {
-    height: 690px;
+    height: 770px;
   }
 }
 @media screen and (min-width: 370px) {
   #projects .projectCard {
-    height: 670px;
+    height: 750px;
   }
 }
 @media screen and (min-width: 390px) {
   #projects .projectCard {
-    height: 650px;
+    height: 730px;
   }
 }
 @media screen and (min-width: 410px) {
   #projects .projectCard {
-    height: 630px;
+    height: 710px;
   }
 }
 @media screen and (min-width: 500px) {
   #projects .projectCard {
-    height: 560px;
+    height: 640px;
   }
 }
 @media screen and (min-width: 650px) {
@@ -451,7 +513,7 @@ header .none {
     height: 310px;
   }
   #projects .projectCard:hover {
-    height: 550px;
+    height: 620px;
   }
   #projects div.projectCard:hover div.content {
     visibility: visible;

@@ -62,66 +62,137 @@
         opacity: 1;
         margin-top: -45px;
         transition: 0.2s ease-in-out;
+
+        .c-button {
+            margin-top: 1.2rem;
+            color: #000;
+            font-weight: 600;
+            font-size: 13px;
+            text-decoration: none;
+            padding: 0.9em 1.6em;
+            cursor: pointer;
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            z-index: 1;
+           }
+           
+           .c-button--gooey {
+            // color: #06c8d9;
+            background: #0093e98f;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 4px solid #06c8d9;
+            border-radius: 0;
+            position: relative;
+            transition: all 700ms ease;
+           }
+           
+           .c-button--gooey .c-button__blobs {
+            height: 100%;
+            filter: url(#goo);
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: -3px;
+            right: -1px;
+            z-index: -1;
+           }
+           
+           .c-button--gooey .c-button__blobs div {
+            background-color: #06c8d9;
+            width: 34%;
+            height: 100%;
+            border-radius: 100%;
+            position: absolute;
+            transform: scale(1.4) translateY(125%) translateZ(0);
+            transition: all 700ms ease;
+           }
+           
+           .c-button--gooey .c-button__blobs div:nth-child(1) {
+            left: -5%;
+           }
+           
+           .c-button--gooey .c-button__blobs div:nth-child(2) {
+            left: 30%;
+            transition-delay: 60ms;
+           }
+           
+           .c-button--gooey .c-button__blobs div:nth-child(3) {
+            left: 66%;
+            transition-delay: 25ms;
+           }
+           
+           .c-button--gooey:hover .c-button__blobs div {
+            transform: scale(1.4) translateY(0) translateZ(0);
+           }
     }
 
+    @media screen and (min-width: 250px) {
+        .projectCard {
+            height: 1000px;
+        }
+    }
     @media screen and (min-width: 270px) {
         .projectCard {
-            height: 850px;
+            height: 950px;
         }
     }
     @media screen and (min-width: 285px) {
         .projectCard {
-            height: 830px;
+            height: 920px;
         }
     }
     @media screen and (min-width: 300px) {
         .projectCard {
-            height: 810px;
+            height: 890px;
         }
     }
     @media screen and (min-width: 310px) {
         .projectCard {
-            height: 780px;
+            height: 850px;
         }
     }
-    @media screen and (min-width: 325) {
+    @media screen and (min-width: 325px) {
         .projectCard {
-            height: 760px;
+            height: 810px;
         }
     }
     @media screen and (min-width: 330px) {
         .projectCard {
-            height: 740px;
+            height: 800px;
         }
     }
     @media screen and (min-width: 335px) {
         .projectCard {
-            height: 710px;
+            height: 780px;
         }
     }
     @media screen and (min-width: 350px) {
         .projectCard {
-            height: 690px;
+            height: 770px;
         }
     }
     @media screen and (min-width: 370px) {
         .projectCard {
-            height: 670px;
+            height: 750px;
         }
     }
     @media screen and (min-width: 390px) {
         .projectCard {
-            height: 650px;
+            height: 730px;
         }
     }
     @media screen and (min-width: 410px) {
         .projectCard {
-            height: 630px;
+            height: 710px;
         }
     }
     @media screen and (min-width: 500px) {
         .projectCard {
-            height: 560px;
+            height: 640px;
         }
     }
     @media screen and (min-width: 650px) {
@@ -130,7 +201,7 @@
             height: 310px;
         }
         .projectCard:hover {
-            height: 550px;
+            height: 620px;
         }
         div.projectCard:hover div.content {
             visibility: visible;
