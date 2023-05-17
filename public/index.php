@@ -40,7 +40,7 @@
                     Etant conscient du chemin à parcourir pour m'améliorer, je suis plus que jamais motivée à apprendre pour devenir meilleur.      
                 </p>
                 <p>Je suis également à la recherche d'une entreprise pouvant m'accueillir pendant mon stage de fin de formation en tant que développeur Web pour une durée total de 2 mois du 30/09 au 30/11 2022.</p>
-                <a href="assets/CV/CV RYAN BOUANANI.pdf" class="button" download="">Voir mon CV</a>
+                <a href="assets/CV/CV_RYAN_BOUANANI_ALTERNANCE.pdf" class="button" download="">Télécharger mon CV</a>
             </div>
             <div class="homeRight elementsScroll">
                 <div class="homeIllustration"></div>
