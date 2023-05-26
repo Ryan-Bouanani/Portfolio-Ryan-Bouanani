@@ -25,11 +25,11 @@
     <meta property="twitter:description" content="Découvrez mon portfolio de développeur web. Vous y trouverez des réalisations qui mettent en avant mes compétences et connaissances pour le développement web.">
     <meta property="twitter:image" content="https://portfolio-ryan-bouanani.vercel.app/assets/metatag/ryan-bouanani-img-metatag.png">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io//apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io//favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io//favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4b89f8">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="./favicon_io/site.webmanifest">
+    <link rel="mask-icon" href="./favicon_io/safari-pinned-tab.svg" color="#4b89f8">
     <meta name="msapplication-TileColor" content="#4b89f8">
     <meta name="theme-color" content="#ffffff">
 </head>
