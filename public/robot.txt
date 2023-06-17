@@ -1,4 +1,3 @@
 User-agent: *
-Disallow: /app/
 Disallow: /assets/
 Sitemap: https://portfolio-ryan-bouanani.vercel.app/sitemap.xml
