@@ -136,6 +136,15 @@ header .none {
   width: 95%;
   transition: opacity 2.8s ease-in-out;
 }
+#home div.homeLeft .h1socialMedia {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+#home div.homeLeft .linkedin {
+  font-size: 1.8rem;
+  color: #0093E9;
+}
 #home div.homeLeft h1 {
   margin-bottom: 0.3rem;
 }
@@ -190,6 +199,13 @@ header .none {
   left: 5%;
 }
 
+@media screen and (max-width: 300px) {
+  #home div.homeLeft .h1socialMedia {
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+  }
+}
 @media screen and (max-width: 500px) {
   #home div.homeLeft {
     width: 100%;
